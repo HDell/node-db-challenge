@@ -32,7 +32,9 @@ function addTask(task) {
 }
 
 function getTask() {
-    return db("tasks");
+    return db("tasks as t")
+        .join("projects as p", "t.project_id", "p.id")
+        .select("t.desc", "p.name", "p.description");
 }
 
 function addResource(resource) {

@@ -68,3 +68,4 @@ router.get('/resources', (req, res) => {
         res.status(500).json({err: "Sorry. The server experienced an error."});
     });
 });
+module.exports = router;
